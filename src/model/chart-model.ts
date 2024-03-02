@@ -3,8 +3,8 @@ import fs from "node:fs"
 
 
 abstract class ChartModel{
-    static getAllChart = (querys: any)=>{
-        const charts = querys.charts;
+    static getAllChart = ()=>{
+        const charts = dbChart.charts;
         return charts;
     }
 }

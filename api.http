@@ -1,3 +1,7 @@
-### Indice
+### Indice 
 
 GET http://localhost:3434/api
+
+### obtener todos los charts
+
+GET http://localhost:3434/api/charts

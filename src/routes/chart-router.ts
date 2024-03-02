@@ -4,7 +4,7 @@ import ChartController from "../controller/chart-controller";
 const chartRouter = Router();
 
 // GET
-chartRouter.get("/chart", ChartController.getAllChart);
+chartRouter.get("/", ChartController.getAllChart);
 // chartRouter.get("/chart/:id", ChartController.getAstroByName);
 
 // // POST
