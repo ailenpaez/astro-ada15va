@@ -7,7 +7,7 @@ const userRouter = Router();
 // GET
 userRouter.get("/", UserController.getAllUsers);
 
-// userRouter.get("/user:/id", UserController.getUserById);
+userRouter.get("/:id", UserController.getUserById);
 
 // POST
 // userRouter.post('/user', UserController.createUser);

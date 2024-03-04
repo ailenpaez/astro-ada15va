@@ -5,16 +5,16 @@ const chartRouter = Router();
 
 // GET
 chartRouter.get("/", ChartController.getAllChart);
-// chartRouter.get("/chart/:id", ChartController.getAstroByName);
 
-// // POST
-// chartRouter.post("/chart", ChartController.createChart);
+chartRouter.get("/:name", ChartController.getAstroByName);
+
+// POST
+chartRouter.post("/", ChartController.createChart);
 
 // // PATCH
 // chartRouter.patch("/chart/:id", ChartController.updateChart);
 
 // //DELETE
 // chartRouter.delete("/chart/:id", ChartController.deleteChart);
-
 
 export default chartRouter;

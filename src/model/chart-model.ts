@@ -1,12 +1,18 @@
-import dbChart from "../database/natal-charts.json"
-import fs from "node:fs"
+import dbChart from "../database/natal-charts.json";
+import fs from "node:fs";
 
+abstract class ChartModel {
+  static getAllChart = () => {
+    const charts = dbChart.charts;
+    return charts;
+  };
 
-abstract class ChartModel{
-    static getAllChart = ()=>{
-        const charts = dbChart.charts;
-        return charts;
-    }
+  static getChartByName = (name: string) => {
+    const chart = dbChart.charts.find(
+      (chart: any) => chart.name.toLowerCase() == name.toLowerCase()
+    );
+    return chart;
+  };
 }
 
 export default ChartModel;
