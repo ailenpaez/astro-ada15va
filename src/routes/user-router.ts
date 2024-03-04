@@ -1,11 +1,12 @@
 import { Router } from "express";
-// import UserController from "../controller/";
+import UserController from "../controller/user-controller";
 
 
 const userRouter = Router();
 
 // GET
-// userRouter.get("/user", UserController.getAll);
+userRouter.get("/", UserController.getAllUsers);
+
 // userRouter.get("/user:/id", UserController.getUserById);
 
 // POST

@@ -2,6 +2,10 @@
 
 GET http://localhost:3434/api
 
-### obtener todos los charts
+### obtener todos los cartas astrales
 
 GET http://localhost:3434/api/charts
+
+### obtener todos los usuarios
+
+GET http://localhost:3434/api/users

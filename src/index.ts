@@ -16,8 +16,10 @@ app.get('/api', (req, res) => {
     });
 });
 
-app.use('/api/users', userRouter);
+
 app.use('/api/charts', chartRouter);
+app.use('/api/users', userRouter);
+
 
 app.use("*", (req, res) => {
   res.status(404).json({ error: "Not found" });
