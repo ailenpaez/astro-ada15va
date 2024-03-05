@@ -16,7 +16,33 @@ abstract class ChartController {
     res.json(chart);
   };
 
-  static createChart = (req:Request, res:Response) => {}
-}
+  static createChart = (req: Request, res: Response) => {
+    const { name,birthdate,time,asc,sun,moon,mercury,venus,mars,jupiter,saturn,uranus,neptune,pluto} = req.body
 
+    const newChart = {
+      name,
+      birthdate,
+      time,
+      asc,
+      sun,
+      moon,
+      mercury,
+      venus,
+      mars,
+      jupiter,
+      saturn,
+      uranus,
+      neptune,
+      pluto
+    };
+
+    const response = ChartModel.createChart(newChart);
+    if (response instanceof Error) {
+        return res.status(500).json({ error: "Error to create New Chart " });
+    };
+
+    return res.json(newChart);
+  };
+
+}
 export default ChartController;

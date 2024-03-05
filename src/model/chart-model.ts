@@ -13,6 +13,20 @@ abstract class ChartModel {
     );
     return chart;
   };
+
+  static createChart = (newChart: any) =>{
+    dbChart.charts.push(newChart);
+
+    try{
+      fs.writeFileSync("./src/database/natal-charts.json", JSON.stringify(dbChart));
+    }catch(error){
+      return new Error();
+    }
+    return newChart;
+
+  }
+
 }
+
 
 export default ChartModel;
