@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import userRouter from "./routes/user-router";
 import chartRouter from "./routes/chart-router";
 
@@ -7,6 +8,7 @@ const PORT = process.env.PORT || 3434;
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/api', (req, res) => {
     res.json({
