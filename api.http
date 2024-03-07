@@ -45,8 +45,8 @@ POST http://localhost:3434/api/users/
 Content-Type: application/json
 
 {
-"name": "luciana",
-"email": "luciarod@gmail.com"
+"name": "Ailen",
+"email": "a.jorgelinapaez@gmail.com"
 }
 
 ### MODIFICAR UNO O VARIOS DATOS DE LA CARTA ASTRAL
