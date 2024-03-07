@@ -23,7 +23,7 @@ POST http://localhost:3434/api/charts
 Content-Type: application/json
 
 {
-"name": "test 4",
+"name": "test 154",
 "birthdate": "1-5-12",
 "time": 2123,
 "asc": 214,
@@ -51,16 +51,16 @@ Content-Type: application/json
 
 ### MODIFICAR UNO O VARIOS DATOS DE LA CARTA ASTRAL
 
-PATCH http://localhost:3434/api/charts/Matias Arno
+PATCH http://localhost:3434/api/charts/test 154
 Content-Type: application/json
 
 {
-"birthdate": "7-3-2000"
+"birthdate": "7-3-2023"
 }
 
 ### MODIFICAR UNO O VARIOS DATOS DE USUARIOS
 
-PATCH http://localhost:3434/api/users/f81484be-e6a8-49dd-9b9e-3fe0c1c7395b
+PATCH http://localhost:3434/api/users/3c5feab1-340a-455f-9dc2-620e1b82857c
 Content-Type: application/json
 
 {
@@ -69,8 +69,8 @@ Content-Type: application/json
 
 ### BORRAR UNA CARTA ASTRAL
 
-DELETE http://localhost:3434/api/charts/test 1
+DELETE http://localhost:3434/api/charts/test 154
 
 ### BORRAR UN USUARIO 
 
-DELETE http://localhost:3434/api/users/8081bdd0-21fb-41b8-a47c-aa1232306a31
+DELETE http://localhost:3434/api/users/3c5feab1-340a-455f-9dc2-620e1b82857c
