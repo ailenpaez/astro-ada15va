@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import crypto from "node:crypto";
 import ChartModel from "../model/chart-model";
+import { validatePartialChart } from "../validator/validatorChart";
 
 abstract class ChartController {
   static getAllChart = (req: Request, res: Response) => {
@@ -16,36 +16,23 @@ abstract class ChartController {
     res.json(chart);
   };
 
-  // static createChart = (req: Request, res: Response) => {
-  //   const { name,birthdate,time,asc,sun,moon,mercury,venus,mars,jupiter,saturn,uranus,neptune,pluto} = req.body
-
-  //   const newChart = {
-  //     name,
-  //     birthdate,
-  //     time,
-  //     asc,
-  //     sun,
-  //     moon,
-  //     mercury,
-  //     venus,
-  //     mars,
-  //     jupiter,
-  //     saturn,
-  //     uranus,
-  //     neptune,
-  //     pluto
-  //   };
-
-  //   const response = ChartModel.createChart(newChart);
-  //   if (response instanceof Error) {
-  //       return res.status(500).json({ error: "Error to create New Chart " });
-  //   };
-
-  //   return res.json(newChart);
-  // };
-
   static createChart = (req: Request, res: Response) => {
-    const { name, birthdate, time, asc, sun, moon, mercury, venus, mars, jupiter, saturn, uranus, neptune, pluto } = req.body;
+    const {
+      name,
+      birthdate,
+      time,
+      asc,
+      sun,
+      moon,
+      mercury,
+      venus,
+      mars,
+      jupiter,
+      saturn,
+      uranus,
+      neptune,
+      pluto,
+    } = req.body;
 
     const newChart = {
       name,
@@ -61,7 +48,7 @@ abstract class ChartController {
       saturn,
       uranus,
       neptune,
-      pluto
+      pluto,
     };
 
     const response = ChartModel.createChart(newChart);
@@ -71,6 +58,56 @@ abstract class ChartController {
     }
 
     return res.json(newChart);
+  };
+
+  static updateChart = (req: Request, res: Response) => {
+    const responseValidator = validatePartialChart(req.body);
+
+    if (!responseValidator.success) {
+      return res.status(400).send(responseValidator.error);
+    }
+
+    const { name } = req.params;
+    const {
+      birthdate,
+      time,
+      asc,
+      sun,
+      moon,
+      mercury,
+      venus,
+      mars,
+      jupiter,
+      saturn,
+      uranus,
+      neptune,
+      pluto,
+    } = req.body;
+
+    const objChart = {
+      name,
+      birthdate,
+      time,
+      asc,
+      sun,
+      moon,
+      mercury,
+      venus,
+      mars,
+      jupiter,
+      saturn,
+      uranus,
+      neptune,
+      pluto,
+    };
+
+    const response = ChartModel.updateChart(objChart);
+
+    if (!response.message) {
+      res.status(400).json({ error: "Error to update Chart!" });
+    }
+
+    return res.json(response);
   };
 }
 

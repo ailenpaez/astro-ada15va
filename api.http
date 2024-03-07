@@ -44,8 +44,16 @@ Content-Type: application/json
 POST http://localhost:3434/api/users/
 Content-Type: application/json
 
-
 {
 "name": "lu",
 "email": "luciap@gmail.com"
+}
+
+### MODIFICAR UNO O VARIOS DATOS DE LA CARTA ASTRAL
+
+PATCH http://localhost:3434/api/charts/Matias Arno
+Content-Type: application/json
+
+{
+"birthdate": "7-3-2000"
 }

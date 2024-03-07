@@ -11,8 +11,8 @@ chartRouter.get("/:name", ChartController.getAstroByName);
 // POST
 chartRouter.post("/", ChartController.createChart);
 
-// // PATCH
-// chartRouter.patch("/chart/:id", ChartController.updateChart);
+// PATCH
+chartRouter.patch("/:name", ChartController.updateChart);
 
 // //DELETE
 // chartRouter.delete("/chart/:id", ChartController.deleteChart);
