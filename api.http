@@ -23,7 +23,7 @@ POST http://localhost:3434/api/charts
 Content-Type: application/json
 
 {
-      "name": "test 2",
+      "name": "test 4",
       "birthdate": "1-5-12",
       "time": 2123,
       "asc": 214,
