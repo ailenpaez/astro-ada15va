@@ -71,7 +71,20 @@ abstract class ChartModel {
     return { message: "Successfully modified chart" };
   }; 
 
-  
+  static deleteChart = (name: string) => {
+    const indexChart = dbChart.charts.findIndex((chart) => chart.name === name);
+
+    if (indexChart === -1) return { error: "Chart not found" };
+
+    dbChart.charts.splice(indexChart, 1);
+
+    try {
+      fs.writeFileSync("./src/database/natal-charts.json", JSON.stringify(dbChart));
+    } catch (error) {
+      return new Error();
+    }
+    return { message: "Successfully deleted Chart" };
+  };
 
 }
 

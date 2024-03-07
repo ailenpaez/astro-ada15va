@@ -109,6 +109,16 @@ abstract class ChartController {
 
     return res.json(response);
   };
+
+  static deleteChart = (req: Request, res: Response) => {
+    const { name } = req.params;
+    const response = ChartModel.deleteChart(name);
+    if (!response.message) {
+      res.status(400).json({ error: "Error to delete chart!" });
+    }
+
+    return res.json(response);
+  };
 }
 
 export default ChartController;

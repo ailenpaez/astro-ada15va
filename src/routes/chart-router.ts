@@ -14,7 +14,7 @@ chartRouter.post("/", ChartController.createChart);
 // PATCH
 chartRouter.patch("/:name", ChartController.updateChart);
 
-// //DELETE
-// chartRouter.delete("/chart/:id", ChartController.deleteChart);
+//DELETE
+chartRouter.delete("/:name", ChartController.deleteChart);
 
 export default chartRouter;
