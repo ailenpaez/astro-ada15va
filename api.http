@@ -57,3 +57,12 @@ Content-Type: application/json
 {
 "birthdate": "7-3-2000"
 }
+
+### MODIFICAR UNO O VARIOS DATOS DE USUARIOS
+
+PATCH http://localhost:3434/api/users/f81484be-e6a8-49dd-9b9e-3fe0c1c7395b
+Content-Type: application/json
+
+{
+    "email": "luciagonz@gmail.com"
+}

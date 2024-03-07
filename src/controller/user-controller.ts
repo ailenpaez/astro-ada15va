@@ -45,7 +45,29 @@ abstract class UserController {
       return res.status(500).json({ error: "Error creating user in the database" });
     }
   };
- 
+
+  static updateUser = (req:Request, res: Response)=>{
+    
+    const responseValidator = validatePartialUser(req.body);
+  
+    if (!responseValidator.success) {
+      return res.status(400).send(responseValidator.error);
+    }
+  
+    const { id } = req.params;
+    const { name, email}  = req.body;
+  
+    const objUser = { id, name, email};
+  
+    const response = UserModel.updateUser(objUser);
+  
+    if (!response.message) {
+      res.status(400).json({ error: "Error to update Chart!" });
+    }
+  
+    return res.json(response);
+  
+  }
 }
 
 export default UserController;
