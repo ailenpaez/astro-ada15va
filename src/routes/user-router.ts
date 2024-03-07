@@ -16,7 +16,7 @@ userRouter.post('/', UserController.createUser);
 // PATCH
 userRouter.patch('/:id', UserController.updateUser);
 
-// // DELETE
-// userRouter.delete('/user/:id', UserController.deleteUser);
+// DELETE
+userRouter.delete('/:id', UserController.deleteUser);
 
 export default userRouter;

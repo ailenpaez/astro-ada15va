@@ -45,8 +45,8 @@ POST http://localhost:3434/api/users/
 Content-Type: application/json
 
 {
-"name": "lu",
-"email": "luciap@gmail.com"
+"name": "luciana",
+"email": "luciarod@gmail.com"
 }
 
 ### MODIFICAR UNO O VARIOS DATOS DE LA CARTA ASTRAL
@@ -70,3 +70,7 @@ Content-Type: application/json
 ### BORRAR UNA CARTA ASTRAL
 
 DELETE http://localhost:3434/api/charts/test 1
+
+### BORRAR UN USUARIO 
+
+DELETE http://localhost:3434/api/users/8081bdd0-21fb-41b8-a47c-aa1232306a31

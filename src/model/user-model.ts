@@ -41,6 +41,21 @@ abstract class UserModel {
     }
     return { message: "Successfully modified User!" };
   };
+
+  static deleteUser = (id: string) => {
+    const indexUser = dbUsers.users.findIndex((user) => user.id === id);
+
+    if (indexUser === -1) return { error: "User not found!" };
+
+    dbUsers.users.splice(indexUser, 1);
+
+    try {
+      fs.writeFileSync("./src/database/users.json", JSON.stringify(dbUsers));
+    } catch (error) {
+      return new Error();
+    }
+    return { message: "Successfully deleted user!" };
+  };
 }
 
 export default UserModel;
