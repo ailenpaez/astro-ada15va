@@ -23,18 +23,29 @@ POST http://localhost:3434/api/charts
 Content-Type: application/json
 
 {
-      "name": "test 4",
-      "birthdate": "1-5-12",
-      "time": 2123,
-      "asc": 214,
-      "sun": 347,
-      "moon": 332,
-      "mercury": 344,
-      "venus": 341,
-      "mars": 180,
-      "jupiter": 310,
-      "saturn": 7,
-      "uranus": 306,
-      "neptune": 299,
-      "pluto": 245
-    }
+"name": "test 4",
+"birthdate": "1-5-12",
+"time": 2123,
+"asc": 214,
+"sun": 347,
+"moon": 332,
+"mercury": 344,
+"venus": 341,
+"mars": 180,
+"jupiter": 310,
+"saturn": 7,
+"uranus": 306,
+"neptune": 299,
+"pluto": 245
+}
+
+### AGREGAR/DAR DE ALTA UN NUEVO USUARIO
+
+POST http://localhost:3434/api/users/
+Content-Type: application/json
+
+
+{
+"name": "lu",
+"email": "luciap@gmail.com"
+}

@@ -10,7 +10,7 @@ userRouter.get("/", UserController.getAllUsers);
 userRouter.get("/:id", UserController.getUserById);
 
 // POST
-// userRouter.post('/user', UserController.createUser);
+userRouter.post('/', UserController.createUser);
 
 // // PATCH
 // userRouter.patch('/user/:id', UserController.updateUser);

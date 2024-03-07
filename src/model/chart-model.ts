@@ -2,6 +2,7 @@ import dbChart from "../database/natal-charts.json";
 import fs from "node:fs";
 
 abstract class ChartModel {
+
   static getAllChart = () => {
     const charts = dbChart.charts;
     return charts;
@@ -13,18 +14,6 @@ abstract class ChartModel {
     );
     return chart;
   };
-
-  // static createChart = (newChart: any) =>{
-  //   dbChart.charts.push(newChart);
-
-  //   try{
-  //     fs.writeFileSync("./src/database/natal-charts.json", JSON.stringify(dbChart));
-  //   }catch(error){
-  //     return new Error();
-  //   }
-  //   return newChart;
-
-  // }
 
   static createChart = (newChart: any) => {
     const existingChart = dbChart.charts.find(
@@ -48,6 +37,9 @@ abstract class ChartModel {
 
     return newChart;
   };
+
+  
+
 }
 
 export default ChartModel;
